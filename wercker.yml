@@ -1,4 +1,4 @@
-box: ami-b95e16d0
+box: ami-bd763ed4
 box-type: ami
 ami-user: Administrator
 build:
@@ -7,3 +7,7 @@ build:
         name: MSBuild
         code: |
           /cygdrive/c/Windows/Microsoft.NET/Framework/v4.0.30319/MSBuild.exe
+    - script:
+        name: Run tests
+        code: |
+          /cygdrive/c/Program\ Files/Gallio/bin/Gallio.Echo.exe Tests/bin/Debug/Tests.dll
