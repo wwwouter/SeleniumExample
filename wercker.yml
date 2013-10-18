@@ -1,6 +1,4 @@
-box: ami-bd763ed4
-box-type: ami
-ami-user: Administrator
+box: wercker-labs/wercker
 build:
   steps:
     - script:
