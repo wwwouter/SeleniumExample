@@ -1,12 +1,15 @@
 box: wercker-labs/windows
 build:
   steps:
-    - script:
-        name: MSBuild
-        code: |
-          /cygdrive/c/Windows/Microsoft.NET/Framework/v4.0.30319/MSBuild.exe
-    - script:
-        name: Run tests
-        code: |
-          /cygdrive/c/Program\ Files/Gallio/bin/Gallio.Echo.exe Tests/bin/Debug/Tests.dll
+    - wercker-labs/nuget
+    - wercker-labs/msbuild
+    - wercker-labs/dotnet-test
+    # - script:
+    #     name: MSBuild
+    #     code: |
+    #       /cygdrive/c/Windows/Microsoft.NET/Framework/v4.0.30319/MSBuild.exe
+    # - script:
+    #     name: Run tests
+    #     code: |
+    #       /cygdrive/c/Program\ Files/Gallio/bin/Gallio.Echo.exe Tests/bin/Debug/Tests.dll
 
