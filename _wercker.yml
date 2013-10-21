@@ -1,9 +1,13 @@
-box: wercker-labs/windows
+#box: wercker-labs/windows
+box: wercker-labs/docker
 build:
   steps:
-    - wercker-labs/nuget
-    - wercker-labs/msbuild
-    - wercker-labs/dotnet-test
+    # - wercker-labs/nuget
+    # - wercker-labs/msbuild
+    # - wercker-labs/dotnet-test
+    - script:
+        name: artifact
+        code: touch $WERCKER_REPORT_ARTIFACTS_DIR\a
     # - script:
     #     name: MSBuild
     #     code: |
